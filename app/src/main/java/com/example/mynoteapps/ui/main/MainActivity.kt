@@ -2,6 +2,7 @@ package com.example.mynoteapps.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +21,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Set content view to splash screen layout
+        setContentView(R.layout.splash_screen)
+
+        // Delayed navigation to the main activity
+        Handler().postDelayed({
+            navigateToMain()
+        }, SPLASH_SCREEN_DELAY)
+    }
+
+    private fun navigateToMain() {
+        // Inflate main activity layout
         _activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
@@ -42,7 +54,6 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-
     }
 
     private fun obtainViewModel(activity: AppCompatActivity): MainViewModel {
@@ -54,4 +65,9 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         _activityMainBinding = null
     }
+
+    companion object {
+        private const val SPLASH_SCREEN_DELAY = 3000L // 3 seconds
+    }
 }
+
