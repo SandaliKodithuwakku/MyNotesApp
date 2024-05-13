@@ -32,3 +32,4 @@ class NoteRepository(application: Application) {
     }
 
 }
+

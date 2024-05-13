@@ -159,3 +159,7 @@ class NoteAddUpdateActivity : AppCompatActivity() {
         return ViewModelProvider(activity, factory).get(NoteAddUpdateViewModel::class.java)
     }
 }
+
+
+
+

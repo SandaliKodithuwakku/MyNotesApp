@@ -48,11 +48,9 @@ class MainActivity : AppCompatActivity() {
         binding?.rvNotes?.setHasFixedSize(true)
         binding?.rvNotes?.adapter = adapter
 
-        binding?.fabAdd?.setOnClickListener { view ->
-            if (view.id == R.id.fab_add) {
-                val intent = Intent(this@MainActivity, NoteAddUpdateActivity::class.java)
-                startActivity(intent)
-            }
+        binding?.fabAdd?.setOnClickListener {
+            val intent = Intent(this@MainActivity, NoteAddUpdateActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -70,4 +68,6 @@ class MainActivity : AppCompatActivity() {
         private const val SPLASH_SCREEN_DELAY = 3000L // 3 seconds
     }
 }
+
+
 

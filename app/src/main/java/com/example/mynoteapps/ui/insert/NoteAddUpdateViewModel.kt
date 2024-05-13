@@ -20,3 +20,5 @@ class NoteAddUpdateViewModel(application: Application) : ViewModel() {
         mNoteRepository.delete(note)
     }
 }
+
+
